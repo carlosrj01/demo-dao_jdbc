@@ -1,5 +1,6 @@
 package application;
 
+import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
@@ -27,11 +28,18 @@ public class Program2 {
 		System.out.println("Update completed - Id: "+dep.getId()+" | New Name: "+dep.getName());
 		
 		
-		System.out.println("\n===== TEST 6: department delete ======");
+		System.out.println("\n===== TEST 3: department delete ======");
 		System.out.print("Enter id for delete: ");
 		int id = sc.nextInt();
 		departmentDao.deleteById(id);
 		System.out.println("Delete completed!");
+		
+		
+		System.out.println("\n===== TEST 4: department findByAll ======");
+		List<Department> list = departmentDao.findAll();
+		for (Department obj : list) {
+			System.out.println(obj);
+		}
 		
 		
 		
